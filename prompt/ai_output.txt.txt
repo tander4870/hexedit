@@ -1,0 +1,49 @@
+# AI Generated Output
+
+## Detailed Design and Requirements Summary
+
+### Platform and Framework:
+- **Platform:** Windows.
+- **GUI Toolkit:** Tkinter (with possibility to switch later if needed).
+
+### File Handling:
+- The editor supports opening, saving, and "Save As" operations.
+- Files are loaded into memory for editing; undo/redo functionality is not required.
+- Expected file sizes: small to medium (e.g., graphics files).
+
+### Display Layout:
+1. **First Row – Navigation Controls:**
+   - Buttons for **Open**, **Save**, **Save As**.
+   - An integrated search bar with a checkbox to toggle wildcard search.
+2. **Second Row – Main Editing Area:**
+   - **Dual-Pane Layout:**
+     - **Left Pane (Hex View):** Displays file bytes in hexadecimal format along with a read-only offset column.
+     - **Right Pane (ASCII View):** Displays the corresponding ASCII characters.
+   - **Editing:** Both panes are editable. Changes in one pane are immediately reflected in the other.
+   - **Selection Synchronization:** Selecting bytes in one pane highlights the corresponding bytes in the other pane.
+3. **Third Row – Conversion Utility:**
+   - Contains four fields: **Alpha**, **ASCII**, **HEX**, and **Binary**.
+   - Each field accepts up to 4 characters (or bytes) of input.
+   - Real-time conversion is performed; editing any one field updates the other three.
+   - Input is validated; for example, invalid hex digits are not allowed.
+
+### Integrated Search Functionality:
+- The search is integrated within the navigation controls.
+- Supports both exact matches and wildcard searches (using `?` for single-character wildcards and `*` for multi-character sequences).
+- Matching bytes are highlighted in both the hex and ASCII views.
+
+### Additional Points:
+- Immediate, real-time updates ensure that any edit in either the hex or ASCII view refreshes the other view without delay.
+- The overall UI is divided into three logical rows to keep the functionality clear and accessible.
+- The conversion utility can be extended later with additional encoding formats if necessary.
+- Proper input validation is enforced across all editing fields to maintain data integrity.
+
+## Final Design Summary:
+- **Dual Editing:** Immediate update with synchronized highlights.
+- **Offset Display:** Each line in the hex view shows a hexadecimal offset.
+- **Conversion Utility:** Supports up to 4 characters for Alpha, ASCII, HEX, and Binary conversions.
+- **Integrated Search:** Exact and wildcard matching options provided directly in the main window.
+- **File Operations:** Open, Save, and Save As are implemented using standard file dialogs.
+- **Extensibility:** The design is modular to allow future enhancements (e.g., search/replace, additional encodings).
+
+This detailed output, along with the original user input, forms the complete set of requirements and design guidelines for the hex editor project.

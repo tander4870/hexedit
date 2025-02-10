@@ -1,0 +1,31 @@
+# User Input
+
+## Initial Requirements
+
+- Develop a hex editor using Python.
+
+- The editor must display a side-by-side view of characters (ASCII) and hex.
+
+- Include a set of input fields below the display area:
+  - **Alpha:** Editable field.
+  - **ASCII:** Editable field.
+  - **HEX:** Editable field.
+  - **Binary:** Editable field.
+
+- Any input in one field should update the corresponding values in the other fields in real time.
+- Editing a character (for example, entering "A" in the Alpha field) should immediately show its ASCII, hex, and binary representations.
+- The hex portion of the display should be editable, with file open and file save functions.
+- The display is to be arranged in three rows:
+
+  1. **Navigation Controls:** Buttons for Open, Save, Save As, and an integrated search bar.
+
+  2. **Main Editing Area:** Dual pane (50-50 split) showing the hex and the ASCII/character view. Each line should display an offset.
+     - Selecting a byte in the hex view should highlight the corresponding character in the ASCII view, and vice versa.
+
+  3. **Utility Row:** A conversion utility for encoding/decoding between ASCII, HEX, Binary, and Alpha.
+- Immediate (real-time) updates are required in both editing panes.
+- Integrated search functionality within the main window, supporting both exact and wildcard searches.
+- The project will run on Windows and can use Tkinter for the GUI.
+- Files are expected to be small to medium in size (possibly graphics files).
+- No undo/redo is needed; all editing is in-memory.
+- Input validation is required (e.g., invalid hex digits like "zz" should be prohibited).
