@@ -1,0 +1,21 @@
+{
+  "project_summary": "Add a brownfield \u201cGo to offset\u201d navigation feature to the existing hex editor UI. Users can type a decimal offset (e.g., 419) or hexadecimal with 0x prefix (e.g., 0x1A3) and jump to that byte. The editor will focus/select the byte, highlight it in both hex and ASCII columns using the existing highlight/selection mechanism, and scroll the views so the target is visible. Invalid/out-of-range offsets will show a clear error message without disrupting existing search/layout behavior.",
+  "required_files": [
+    "hexeditor.py"
+  ],
+  "optional_files": [],
+  "required_assets": [],
+  "optional_assets": [],
+  "generation_order": [
+    "hexeditor.py"
+  ],
+  "notes": [
+    "Implement minimal UI addition: a small \u201cGo to offset\u201d control (label + entry + button) placed near existing controls (e.g., search bar area) without changing overall layout.",
+    "Parsing rules: accept decimal (digits only) and hex with 0x/0X prefix; optionally accept plain hex without prefix only if it can be disambiguated safely (but minimum is decimal + 0x).",
+    "Validation: offset must be an integer in [0, file_size-1]; if no file is loaded, show an error message.",
+    "On success: move caret/focus to the target byte, apply highlight/selection to both hex and ASCII views (reuse existing selection/highlight tagging approach), and scroll so the byte is visible (e.g., using existing row/byte indexing math and widget yview/see calls).",
+    "On failure: display a clear error message (prefer existing status/error label mechanism; otherwise use a messagebox or dedicated inline label near the control).",
+    "Nice-to-have: bind Enter/Return in the offset entry to trigger the same jump action as the button.",
+    "Keep existing search behavior intact; do not remove/alter current search highlights unless necessary\u2014prefer layering go-to highlight as the same selection highlight used for the active byte."
+  ]
+}
