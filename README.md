@@ -56,3 +56,4 @@ This project includes code generated with the assistance of AI (ChatGPT). Full c
 License
 -------
 This project is licensed under the MIT License. See the LICENSE file for details.
+Note: This is a one-line test update to the README.
